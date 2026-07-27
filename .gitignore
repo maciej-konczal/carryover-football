@@ -1,0 +1,171 @@
+# Carryover
+# Keep source code, documentation, manifests, synthetic/sample fixtures,
+# and public prediction records in Git. Keep credentials, downloaded data,
+# local databases, caches, model binaries, and generated artifacts out.
+
+# -----------------------------------------------------------------------------
+# Secrets and local configuration
+# -----------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+.secrets/
+secrets/
+*.pem
+*.key
+kaggle.json
+credentials.json
+
+# -----------------------------------------------------------------------------
+# Python bytecode, caches, and virtual environments
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.pyright/
+.hypothesis/
+.tox/
+.nox/
+.cache/
+
+.venv/
+venv/
+env/
+ENV/
+
+# -----------------------------------------------------------------------------
+# Packaging and build output
+# -----------------------------------------------------------------------------
+build/
+dist/
+site/
+*.egg-info/
+.eggs/
+*.egg
+pip-wheel-metadata/
+
+# -----------------------------------------------------------------------------
+# Test and coverage output
+# -----------------------------------------------------------------------------
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.junit/
+pytest-report.xml
+
+# -----------------------------------------------------------------------------
+# Jupyter and notebooks
+# -----------------------------------------------------------------------------
+.ipynb_checkpoints/
+.jupyter/
+
+# -----------------------------------------------------------------------------
+# Local football data and provider caches
+# -----------------------------------------------------------------------------
+# Ignore local/downloaded data by default, but keep documentation, manifests,
+# and deliberately committed synthetic or tiny sample fixtures.
+data/*
+!data/README.md
+!data/manifests/
+!data/manifests/**
+!data/synthetic/
+!data/synthetic/**
+!data/sample/
+!data/sample/**
+
+# Common provider-specific local caches
+statsbomb-open-data/
+skillcorner-open-data/
+wyscout-data/
+provider-cache/
+downloads/
+
+# -----------------------------------------------------------------------------
+# Local analytical databases and large tabular outputs
+# -----------------------------------------------------------------------------
+*.duckdb
+*.duckdb.wal
+*.sqlite
+*.sqlite3
+*.db
+*.parquet.tmp
+*.arrow.tmp
+
+# -----------------------------------------------------------------------------
+# Generated models, experiment trackers, and local artifacts
+# -----------------------------------------------------------------------------
+artifacts/*
+!artifacts/README.md
+!artifacts/public/
+!artifacts/public/**
+
+models/local/
+checkpoints/
+mlruns/
+mlartifacts/
+wandb/
+catboost_info/
+ray_results/
+lightning_logs/
+
+*.joblib
+*.pkl
+*.pickle
+*.onnx
+*.pt
+*.pth
+*.ckpt
+*.h5
+
+# DVC local cache and temporary files. Keep .dvc/config and *.dvc files tracked.
+.dvc/cache/
+.dvc/tmp/
+
+# -----------------------------------------------------------------------------
+# Generated reports and temporary exports
+# -----------------------------------------------------------------------------
+reports/generated/
+exports/
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+*.log
+logs/
+
+# -----------------------------------------------------------------------------
+# Frontend tooling (for a later web app)
+# -----------------------------------------------------------------------------
+node_modules/
+.next/
+out/
+.vercel/
+.turbo/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# -----------------------------------------------------------------------------
+# IDEs and operating systems
+# -----------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.code-workspace
+
+# -----------------------------------------------------------------------------
+# Local Codex / agent scratch files
+# -----------------------------------------------------------------------------
+.codex/
+.agent/
+.scratch/
+
+PRD.md
