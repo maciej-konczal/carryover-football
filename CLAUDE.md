@@ -13,15 +13,29 @@ Juventus, reconstructed from information available at transfer time.
 ## Commands
 
 ```sh
-make test      # python3 -m pytest (pythonpath=src, testpaths=tests, addopts=-ra)
+make setup     # create .venv and install the package plus the dev extra
+make test      # pytest (pythonpath=src, testpaths=tests, addopts=-ra)
 make quality   # ruff check . && ruff format --check .
 make demo      # run the CLI against examples/data/*.json
 ```
 
-Single test: `python3 -m pytest tests/test_roles.py::test_compare_roles_calculates_deltas_gaps_and_mean_distance`
+Every target runs through `.venv/bin/python` and depends on it as a build
+target, so `make test` on a clean clone bootstraps the environment first;
+`make setup` exists because PRD section 11.2 documents it, not because the
+other targets need it run beforehand. The venv is rebuilt whenever
+`pyproject.toml` changes, which is how new dependencies get picked up.
 
-Run the CLI directly: `PYTHONPATH=src python3 -m carryover_football <origin.json> <destination.json>`
-(installed as the `carryover-football` console script). Requires Python >= 3.12.
+Requires Python >= 3.12, and the recipe refuses to build the venv with
+anything older. On macOS the Command Line Tools `python3` is often 3.9, so
+pass an explicit interpreter when the guard fires:
+`make setup PYTHON=python3.12`.
+
+Single test:
+`.venv/bin/python -m pytest tests/test_roles.py::test_compare_roles_calculates_deltas_gaps_and_mean_distance`
+
+Run the CLI directly: `.venv/bin/python -m carryover_football <origin.json>
+<destination.json>`, or `PYTHONPATH=src python3 -m carryover_football ...`
+without a venv (also installed as the `carryover-football` console script).
 Dev deps are in the `dev` extra (`pytest`, `ruff`); the runtime package has zero
 dependencies and that is deliberate.
 
