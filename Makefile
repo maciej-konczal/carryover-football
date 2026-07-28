@@ -47,3 +47,4 @@ demo: $(VENV_PYTHON)
 learn: $(VENV_PYTHON)
 	$(VENV_PYTHON) learning/01_sampling_variance.py
 	$(VENV_PYTHON) learning/02_distance_metrics.py
+	$(VENV_PYTHON) learning/03_percentiles_and_zscores.py

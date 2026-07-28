@@ -22,6 +22,7 @@ line is not teaching you much.
 |---|---|---|---|
 | 01 | `01_sampling_variance.py` | Binomial variance, standard error | Why one season of goals is nearly uninformative, and why behaviour is not |
 | 02 | `02_distance_metrics.py` | L1, L2, cosine distance | What `role_transition_distance` actually computes, and why cosine would be wrong |
+| 03 | `03_percentiles_and_zscores.py` | Percentiles, z-scores, reference populations | Why the 0.0-1.0 range in `RoleProfile` hides an unmade decision |
 
 ## A note on the numbers in lesson 01
 
@@ -36,7 +37,6 @@ Treat that as part of the lesson.
 
 ## Planned next
 
-- **03** Percentiles vs z-scores, and why "percentile against whom" changes everything
 - **04** Regression to the mean, the single biggest driver of apparent transfer flops
 - **05** Split-half reliability and Mean Reciprocal Rank, the B1 benchmark rung
 - **06** NMF on a toy heatmap, the technique behind Player Vectors and StatsBomb style
