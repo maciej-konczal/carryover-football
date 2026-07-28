@@ -168,4 +168,12 @@ Thumbs.db
 .agent/
 .scratch/
 
+# -----------------------------------------------------------------------------
+# Local working documents
+# -----------------------------------------------------------------------------
+# Kept out of Git by choice rather than by rule: the PRD, research notes, and
+# design records still being revised. None of it is generated, so back it up
+# somewhere - Git is not doing it for you.
 PRD.md
+notes.md
+docs/
